@@ -81,9 +81,7 @@ namespace
             FieldMatcher::build()
             .set(MeasurementType::Instantaneous)
             .set(VIFRange::AnyEnergyVIF)
-            .set(SubunitNr(0))
-            .set(TariffNr(1))
-            .set(StorageNr(0))
+            .set(IndexNr(2))
             );
  
         addNumericFieldWithExtractor(
@@ -95,6 +93,7 @@ namespace
             FieldMatcher::build()
             .set(MeasurementType::Instantaneous)
             .set(VIFRange::Volume)
+            .set(IndexNr(1))
             );
  
         addNumericFieldWithExtractor(
@@ -106,9 +105,7 @@ namespace
             FieldMatcher::build()
             .set(MeasurementType::Instantaneous)
             .set(VIFRange::Volume)
-            .set(SubunitNr(0))
-            .set(TariffNr(1))
-            .set(StorageNr(0))
+            .set(IndexNr(2))
             );
  
         addNumericFieldWithExtractor(
@@ -120,9 +117,7 @@ namespace
             FieldMatcher::build()
             .set(MeasurementType::Instantaneous)
             .set(VIFRange::Volume)
-            .set(SubunitNr(1))
-            .set(TariffNr(0))
-            .set(StorageNr(0))
+            .set(IndexNr(3))
             );
  
         addNumericFieldWithExtractor(
@@ -134,9 +129,7 @@ namespace
             FieldMatcher::build()
             .set(MeasurementType::Instantaneous)
             .set(VIFRange::Volume)
-            .set(SubunitNr(2))
-            .set(TariffNr(0))
-            .set(StorageNr(0))
+            .set(IndexNr(4))
             );
  
         addNumericFieldWithExtractor(
@@ -199,15 +192,15 @@ namespace
  
 // Test: testm4 hydrocalm4 05171338 NOKEY
 // telegram=|3E44B409381317051A0D8C00497A7C000000_046D2BAA153A0C03000000000C13000000000B3B0000000B280000000A5930230A5D08250F6402000000000000|
-// {"_":"telegram","media":"heat/cooling load","meter":"hydrocalm4","name":"testm4","id":"05171338","device_datetime":"2024-10-21 10:43","power_kw": 0, "return_temperature_c"}
+// {"_":"telegram","media":"heat/cooling load","meter":"hydrocalm4","name":"testm4","id":"05171338","device_datetime":"2024-10-21 10:43","power_kw": 0}
 // |testm4;05171338;OK;0;null;1111-11-11 11:11.11
  
 // Test: testm4 hydrocalm4 05171338 NOKEY
 // telegram=|3B44B409381317051A0D8C00497A7E000000_046D2DAA153A0C03000000000C13000000008C4013999900008C804013888800000F6403000000000000|
-// {"_":"telegram","c1_volume_m3": 9.999,"c2_volume_m3": 8.888,"device_datetime": "2024-10-21 10:45","id": "05171338","media": "heat/cooling load","meter": "hydrocalm4","name"}
+// {"_":"telegram","c1_volume_m3": 9.999,"c2_volume_m3": 8.888,"device_datetime": "2024-10-21 10:45","id": "05171338","media": "heat/cooling load","meter": "hydrocalm4","name": "testm4"}
 // |testm4;05171338;OK;0;null;1111-11-11 11:11.11
  
 // Test: testm5 hydrocalm4 05128041 NOKEY
 // telegram=|3e44B409418012051a0d8c20f17a9d000020046d0d3126310c0a481878330c13098405000B3B0000000B301000000a5929360a5d94230f6402000000000000|
-// {"_": "telegram","device_datetime": "2025-01-06 17:13","id": "05128041","media": "heat/cooling load","meter": "hydrocalm4","name": "testm5","power_kw": 3e-06,"return_temperature_c": 23.94,"status": "OK","supply_temperature_c": 36.29}
+// {"_": "telegram","device_datetime": "2025-01-06 17:13","id": "05128041","media": "heat/cooling load","meter": "hydrocalm4","name": "testm5","power_kw": 3e-06,"return_temperature_c": 23.94,"status": "OK","supply_temperature_c": 36.29,"total_heating_kwh": 938.384667}
 // |testm5;05128041;OK;938.384667;null;1111-11-11 11:11.11
